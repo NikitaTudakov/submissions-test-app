@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnum } from 'src/shared/enums/navigationEnum';
 import { NavigationLink } from 'src/shared/interfaces/navigationLink.interface';
 
@@ -7,7 +7,7 @@ import { NavigationLink } from 'src/shared/interfaces/navigationLink.interface';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
     public navigationItems: NavigationLink[] = [
         {
@@ -46,11 +46,6 @@ export class HeaderComponent implements OnInit {
     
     get NavigationEnum(): typeof NavigationEnum {
         return NavigationEnum
-    }
-
-    constructor() { }
-
-    ngOnInit(): void {
     }
 
 }
