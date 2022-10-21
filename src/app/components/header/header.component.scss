@@ -1,11 +1,11 @@
 .app-navigation {
     display: flex;
     background: #2188D9;
-
+    padding: 0 32px;
     color: #FFFFFF;
 
     &__logo {
-        margin: 12px 0 12px 32px;
+        line-height: 72px;
         font-size: 32px;
         font-weight: 700;
         text-decoration: none;
@@ -30,8 +30,6 @@
 
     &__additional {
         display: flex;
-        margin-right: 24px;
-
         &__link {
             margin: 0 11px;
 

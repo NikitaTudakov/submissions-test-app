@@ -1,2 +1,46 @@
-<p>submissions works!</p>
-<app-submission-list></app-submission-list>
+<div class="submissions__container">
+    <div class="submissions__actions" #submissionsActions>
+        <mat-form-field class="submissions__actions__input">
+            <input matInput  class="submissions__input">
+            <mat-placeholder class="submissions__placeholder">Search...</mat-placeholder>
+            <mat-icon matPrefix class="submissions__input-icon submissions__icon">search</mat-icon>
+          </mat-form-field>
+
+        <mat-form-field class="submissions__actions__select-box">
+            <mat-placeholder class="submissions__placeholder">Select Form</mat-placeholder>
+
+            <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+            </mat-select>
+            <mat-icon matSuffix class="submissions__icon">keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="submissions__actions__select-box">
+            <mat-placeholder class="submissions__placeholder">Select Status</mat-placeholder>
+
+            <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+            </mat-select>
+            <mat-icon matSuffix class="submissions__icon">keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="submissions__actions__datepicker">
+            <mat-placeholder class="submissions__placeholder">Choose a date</mat-placeholder>
+
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle
+                matPrefix
+                [for]="picker"
+                class="submissions__actions__datepicker-icon submissions__icon"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <mat-tab-group class="submissions__view-toggler" #tabGroup>
+        <button>hello</button>
+        <mat-tab label="Map"><app-submission-map></app-submission-map></mat-tab>
+        <mat-tab label="List"><app-submission-list></app-submission-list></mat-tab>
+    </mat-tab-group>
+</div>

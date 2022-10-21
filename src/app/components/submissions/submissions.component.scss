@@ -1,0 +1,69 @@
+.submissions {
+
+    &__container {
+        position: relative;
+    }
+
+    &__view-toggler {
+        width: 100%;
+    }
+
+    &__input {
+
+        font-size: 16px !important;
+
+        &-icon {
+            margin-right: 12px;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        z-index: 100;
+        margin-right: 265px;
+
+        &__input,&__select-box {
+            margin-right: 40px;
+        }
+
+        &__input {
+            width: 334px;
+        }
+
+        &__datepicker {
+            &-icon {
+                margin-right: 10px;
+            }
+        }
+        
+    }
+
+    &__icon {
+        color: gray !important;
+    }
+
+    &__placeholder {
+        color: #060C1B;
+    }
+
+    &__export-btn {
+        display: flex;
+        align-items: center;
+        margin-left: 27px;
+        color: #2188D9;
+        font-weight: 500;
+        font-size: 16px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+
+        &__icon {
+            -webkit-mask: url(../../../assets/icons/download-icon.svg) no-repeat center;
+            mask: url(../../../assets/icons/download-icon.svg) no-repeat center;
+            background-color: #2188D9;
+            width: 20px;
+            height: 17px;
+        }
+    }
+}

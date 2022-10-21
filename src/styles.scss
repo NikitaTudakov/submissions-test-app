@@ -45,3 +45,88 @@ button {
 a {
     cursor: pointer;
 }
+
+
+/* Styles for tab labels */
+
+.mat-tab-labels {
+    justify-content: end;
+}
+
+.mat-tab-label {
+    border: 2px solid #B8B9BC;
+    border-radius: 4px;
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+    font-weight: 700;
+}
+
+.mat-tab-label:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.mat-tab-label:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    background-color: #2188D9;
+    border-color: #2188D9;
+    color: white;
+    font-weight: 700;
+}
+
+.mat-tab-header {
+    border-bottom: none;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: transparent !important;
+}
+
+
+.submissions__actions__datepicker .mat-form-field-prefix {
+    align-self: center;
+}
+
+.mat-form-field-flex {
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.66em 0;
+}
+
+.mat-tab-body {
+    margin-top: 26px;
+}
+
+.mat-form-field-underline {
+    display: none;
+}
+
+.mat-select-arrow {
+    opacity: 0;
+}
+
+.mat-select-panel-wrap{
+    position: relative;
+    top: 40px;
+}
+
+.mat-select-panel-wrap .mat-select-panel{
+    min-width: calc(100% + 50px) !important;
+}
+
