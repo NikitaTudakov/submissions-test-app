@@ -1,1 +1,11 @@
-<p>submission-map works!</p>
+<div class="submission-map">
+    <div class="submission-map__list">
+        <app-submission-card
+            *ngFor="let submission of submissions"
+            [submission]="submission">
+        </app-submission-card>
+    </div>
+    <div class="submission-map__google-map">
+        Map Will Be Here
+    </div>
+</div>

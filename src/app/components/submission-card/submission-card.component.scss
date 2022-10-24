@@ -1,0 +1,64 @@
+@import '../../../shared/mixins/status-value.scss';
+
+.submission-card {
+    border: 1px solid #B8B9BC;
+    border-radius: 4px;
+    padding: 16px;
+    margin-right: 40px;
+    margin-bottom: 8px;
+    max-width: 460px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &__title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        &__status {
+            max-height: 30px;
+            @include status-value;
+
+            &::before {
+                vertical-align: middle;
+            }
+    
+            &-Low {
+                @include status-value-Low;
+            }
+    
+            &-Uncomplete {
+                @include status-value-Uncomplete;
+            }
+    
+            &-Unassigned {
+                @include status-value-Unassigned;
+            }
+        }
+    };
+
+    &__row {
+        margin-bottom: 8px;
+        font-size: 16px;
+
+        &__title {
+            color: #B8B9BC;
+            margin-right: 8px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &__value {
+            &-expiried {
+                font-weight: 500;
+                color: #FF3D00;
+            }
+        }
+    }
+}

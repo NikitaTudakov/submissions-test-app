@@ -47,7 +47,7 @@ a {
 }
 
 
-/* Styles for tab labels */
+/* Material styles */
 
 .mat-tab-labels {
     justify-content: end;
@@ -75,7 +75,6 @@ a {
     border-left: none;
 }
 
-/* Styles for the active tab label */
 .mat-tab-label.mat-tab-label-active {
     min-width: 25px !important;
     background-color: #2188D9;
@@ -88,7 +87,6 @@ a {
     border-bottom: none;
 }
 
-/* Styles for the ink bar */
 .mat-ink-bar {
     background-color: transparent !important;
 }
@@ -130,3 +128,11 @@ a {
     min-width: calc(100% + 50px) !important;
 }
 
+.submission-list__table__checkbox .mat-checkbox-inner-container {
+    width: 24px;
+    height: 24px;
+}
+
+.submission-list__table__checkbox .mat-checkbox-frame {
+    border-color: #B8B9BC
+}

@@ -1,1 +1,59 @@
-<p>submission-list works!</p>
+<div class="submission-list">
+    <table class="submission-list__table">
+        <thead>
+            <tr>
+                <th><mat-checkbox class="submission-list__table__checkbox" color="primary" disabled></mat-checkbox></th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Customer Address</th>
+                <th>Due Date</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let submission of slicedSubmissions">
+                <td><mat-checkbox class="submission-list__table__checkbox" color="primary"></mat-checkbox></td>
+                <td>{{submission.task}}</td>
+                <td class="submission-list__table__status">
+                    <span [class]="'submission-list__table__status-'+submission.status">
+                        {{submission.status}}
+                    </span>
+                </td>
+                <td>{{submission.from}}</td>
+                <td>{{submission.to}}</td>
+                <td>{{submission.address}}</td>
+                <td [class.expiried]="isExpiried(submission.date)">{{submission.date | date : 'MMM d, hh:mm a'}}</td>
+              </tr>
+        </tbody>
+    </table>
+
+    <div class="submission-list__footer">
+        <div class="submission-list__footer__position">
+            <span>{{currentSubmissions}} of </span>
+            <span>{{totalSubmissions}} submissions</span>
+        </div>
+
+        <div class="submission-list__footer__pagination">
+            <button
+                class="pagination__button"
+                [disabled]="currentPageNumber==1"
+                (click)="getPage(currentPageNumber-1)">
+                <i class="pagination__button__arrow pagination__button__arrow-left"></i>
+            </button>
+            <button *ngFor="let page of paginationPages"
+                    class="pagination__button"
+                    [class.pagination__button-current]="page === currentPageNumber"
+                    (click)="getPage(page)">
+                    {{page ? page : '...'}}
+            </button>
+            <button
+                class="pagination__button "
+                [disabled]="isLastPage"
+                (click)="getPage(currentPageNumber+1)">
+                <i class="pagination__button__arrow pagination__button__arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+

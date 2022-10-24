@@ -1,0 +1,17 @@
+.submission-map {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-left: 10px;
+
+    &__list {
+        max-height: calc(100vh - var(--top-height));
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+          
+    }
+}

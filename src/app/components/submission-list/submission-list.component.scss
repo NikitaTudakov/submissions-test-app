@@ -1,0 +1,129 @@
+@import '../../../shared/mixins/status-value.scss';
+
+.submission-list {
+    width: 100%;
+    padding: 10px;
+
+    &__table {
+        width: 100%;
+        margin-bottom: 42.5px;
+        border-collapse: collapse;
+        box-shadow: 0px 2px 10px rgba(6, 12, 27, 0.1);
+        border-radius: 8px;
+        cursor: default;
+
+        thead {
+            th {
+                border-bottom: 1px solid #ECECED;
+                padding: 16px 10px;
+                text-align: start;
+
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+    
+        }
+
+        tbody {
+            tr {
+                line-height: 47px;
+
+                &:hover {
+                    background: #F1F5F8;
+                }
+            }
+            td {
+                padding: 0 10px;
+                font-size: 16px;
+                font-weight: 400;
+                border-bottom: 1px solid #ECECED;
+
+
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+
+            td.expiried {
+                font-weight: 500;
+                color: #FF3D00;
+            }
+        }
+
+        &__status {
+            span {
+                @include status-value;
+            }
+
+            &-Low {
+                @include status-value-Low;
+            }
+
+            &-Uncomplete {
+                @include status-value-Uncomplete;
+            }
+
+            &-Unassigned {
+                @include status-value-Unassigned;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+
+        &__position {
+            font-size: 16px;
+        }
+
+    }
+}
+
+.pagination__button {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border: 1px solid #B8B9BC;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &-current {
+        color: #2188D9;
+        border-color: #2188D9;
+    }
+
+    &[disabled] {
+        background-color: #ECECED;
+    }
+
+    &__arrow {
+        border: solid #B8B9BC;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+
+        &-right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-right: 5px;
+        }
+
+        &-left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            margin-left: 5px;
+        }
+    }
+}
