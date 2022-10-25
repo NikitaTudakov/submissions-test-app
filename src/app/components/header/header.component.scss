@@ -1,0 +1,56 @@
+@import '../../../shared/styles/colors/colors';
+
+.app-navigation {
+    display: flex;
+    background: $base-blue;
+    padding: 0 32px;
+    color: $base-white;
+
+    &__logo {
+        line-height: 72px;
+        font-size: 32px;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__list {
+        flex-grow: 2;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+
+        &__link {
+            padding: 0 16px;
+
+            &-icon {
+                vertical-align: middle;
+                margin-right: 11px;
+            }
+        }
+    }
+
+    &__additional {
+        display: flex;
+        &__link {
+            margin: 0 11px;
+
+            &-icon {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        color: inherit;
+        line-height: 72px;
+
+        &-active {
+            background-color: #1773BB;
+        }
+    }
+}

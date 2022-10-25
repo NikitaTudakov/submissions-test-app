@@ -1,0 +1,25 @@
+<div class="submission-card">
+    <div class="submission-card__header">
+        <h4 class="submission-card__header__title">{{submission.task}}</h4>
+        <span
+            class="submission-card__header__status"
+            [class]="'submission-card__header__status-'+submission.status">
+            {{submission.status}}
+        </span>
+    </div>
+    <div class="submission-card__row">
+        <span class="submission-card__row__title">From: </span>
+        <span class="submission-card__row__value">{{submission.from}}</span>
+    </div>
+    <div class="submission-card__row">
+        <span class="submission-card__row__title">To: </span>
+        <span class="submission-card__row__value">{{submission.to}}</span>
+    </div>
+    <div class="submission-card__row">
+        <span class="submission-card__row__title">Due Date: </span>
+        <span
+            class="submission-card__row__value"
+            [class.submission-card__row__value-expiried]="isExpiried(submission.date)">{{submission.date | date: 'dd MMMM'}}
+        </span>
+    </div>
+</div>

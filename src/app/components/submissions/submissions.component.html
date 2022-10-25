@@ -1,0 +1,47 @@
+<div class="submissions__container">
+    <form  class="submissions__actions" #submissionsActions [formGroup]="submissionsFilterForm">
+        <mat-form-field class="submissions__actions__input">
+            <input matInput  class="submissions__input" formControlName="task">
+            <mat-placeholder class="submissions__input-placeholder">Search...</mat-placeholder>
+            <mat-icon matPrefix class="submissions__input-icon submissions__icon">search</mat-icon>
+          </mat-form-field>
+
+        <mat-form-field class="submissions__actions__select-box">
+            <mat-placeholder class="submissions__placeholder">Select From</mat-placeholder>
+
+            <mat-select formControlName="from">
+                <mat-option [value]="email" *ngFor="let email of submissionFromEmailsList">{{email}}</mat-option>
+                <mat-option>None</mat-option>
+            </mat-select>
+            <mat-icon matSuffix class="submissions__icon">keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="submissions__actions__select-box">
+            <mat-placeholder class="submissions__placeholder">Select Status</mat-placeholder>
+            <mat-select formControlName="status">
+                <mat-option *ngFor="let enum of submissionStatus | keyvalue" [value]="enum.value">
+                    {{ enum.value}}
+                  </mat-option>
+                <mat-option>None</mat-option>
+            </mat-select>
+            <mat-icon matSuffix class="submissions__icon">keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="submissions__actions__datepicker">
+            <mat-placeholder class="submissions__placeholder">Choose a date</mat-placeholder>
+
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-datepicker-toggle
+                matPrefix
+                [for]="picker"
+                class="submissions__actions__datepicker-icon submissions__icon">
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form >
+
+    <mat-tab-group class="submissions__view-toggler" #tabGroup [dynamicHeight]='true'>
+        <mat-tab label="Map"><app-submission-map [submissions]="filteredSubmissions"></app-submission-map></mat-tab>
+        <mat-tab label="List"><app-submission-list [submissions]="filteredSubmissions"></app-submission-list></mat-tab>
+    </mat-tab-group>
+</div>

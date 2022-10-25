@@ -1,0 +1,27 @@
+<header>
+    <nav class="app-navigation">
+        <a class="app-navigation__logo" routerLink="/">{{NavigationEnum.TITLE}}</a>
+        <ul class="app-navigation__list">
+            <li *ngFor="let item of navigationItems"
+                class="app-navigation__list__listItem"
+            >
+                <a  [routerLink]="item.routerLink"
+                    routerLinkActive="app-navigation__link-active"
+                    class="app-navigation__list__link app-navigation__link">
+                    <mat-icon class="app-navigation__list__link-icon">{{item.icon}}</mat-icon>
+                    <span class="app-navigation__list__link-text">{{item.title}}</span>
+                </a>
+            </li>
+        </ul>
+        <div class="app-navigation__additional">
+            <a class="app-navigation__additional__link app-navigation__link"
+                routerLink="/">
+                <mat-icon class="app-navigation__additional__link-icon">notifications</mat-icon>
+            </a>
+            <a class="app-navigation__additional__link app-navigation__link"
+                routerLink="/">
+                <mat-icon class="app-navigation__additional__link-icon">exit_to_app</mat-icon>
+            </a>
+        </div>
+    </nav>
+</header>

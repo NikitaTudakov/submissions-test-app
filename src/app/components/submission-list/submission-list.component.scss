@@ -1,0 +1,130 @@
+@import '../../../shared/styles/mixins/status-value';
+@import '../../../shared/styles/colors/colors';
+
+.submission-list {
+    width: 100%;
+    padding: 10px;
+
+    &__table {
+        width: 100%;
+        margin-bottom: 42.5px;
+        border-collapse: collapse;
+        box-shadow: 0px 2px 10px rgba(6, 12, 27, 0.1);
+        border-radius: 8px;
+        cursor: default;
+
+        thead {
+            th {
+                border-bottom: 1px solid $lightest-grey;
+                padding: 16px 10px;
+                text-align: start;
+
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+    
+        }
+
+        tbody {
+            tr {
+                line-height: 47px;
+
+                &:hover {
+                    background: $light-blue;
+                }
+            }
+            td {
+                padding: 0 10px;
+                font-size: 16px;
+                font-weight: 400;
+                border-bottom: 1px solid $lightest-grey;
+
+
+                &:last-child {
+                    padding-left: 0;
+                }
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+
+            td.expiried {
+                font-weight: 500;
+                color: $base-error;
+            }
+        }
+
+        &__status {
+            span {
+                @include status-value;
+            }
+
+            &-Low {
+                @include status-value-Low;
+            }
+
+            &-Uncomplete {
+                @include status-value-Uncomplete;
+            }
+
+            &-Unassigned {
+                @include status-value-Unassigned;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+
+        &__position {
+            font-size: 16px;
+        }
+
+    }
+}
+
+.pagination__button {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    border: 1px solid $light-grey;
+    background-color: $base-white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &-current {
+        color: $base-blue;
+        border-color: $base-blue;
+    }
+
+    &[disabled] {
+        background-color: $lightest-grey;
+    }
+
+    &__arrow {
+        border: solid $light-grey;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+
+        &-right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-right: 5px;
+        }
+
+        &-left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,1 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
+@import './shared/styles/colors/colors';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+/* Material styles */
+
+.mat-tab-labels {
+    justify-content: end;
+}
+
+.mat-tab-label {
+    border: 2px solid $light-grey;
+    border-radius: 4px;
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: $base-black;
+    font-weight: 700;
+}
+
+.mat-tab-label:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.mat-tab-label:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+}
+
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    background-color: $base-blue;
+    border-color: $base-blue;
+    color: white;
+    font-weight: 700;
+}
+
+.mat-tab-header {
+    border-bottom: none;
+}
+
+.mat-ink-bar {
+    background-color: transparent !important;
+}
+
+
+.submissions__actions__datepicker .mat-form-field-prefix {
+    align-self: center;
+}
+
+.mat-form-field-flex {
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.66em 0;
+}
+
+.mat-tab-body {
+    margin-top: 26px;
+}
+
+.mat-form-field-underline {
+    display: none;
+}
+
+.mat-select-arrow {
+    opacity: 0;
+}
+
+.mat-select-panel-wrap{
+    position: relative;
+    top: 40px;
+}
+
+.mat-select-panel-wrap .mat-select-panel{
+    min-width: calc(100% + 50px) !important;
+}
+
+.submission-list__table__checkbox .mat-checkbox-inner-container {
+    width: 24px;
+    height: 24px;
+}
+
+.submission-list__table__checkbox .mat-checkbox-frame {
+    border-color: $light-grey
+}
