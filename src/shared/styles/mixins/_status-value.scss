@@ -15,31 +15,31 @@
 }
 
 @mixin status-value-Low {
-    color: #53D86A;
+    color: $base-success;
     background: #D7E5DA; 
-    border-color: #53D86A;
+    border-color: $base-success;
 
     &::before {
-        background-color: #53D86A;
+        background-color: $base-success;
     }
 }
 
 @mixin status-value-Uncomplete {
-    color: #FF3D00;
+    color: $base-error;
     background: rgba(255, 61, 0, 0.1);
-    border-color: #FF3D00;
+    border-color: $base-error;
 
     &::before {
-        background-color: #FF3D00;
+        background-color: $base-error;
     }
 }
 
 @mixin status-value-Unassigned {
-    color: #B8B9BC;
-    background: #ECECED;  
-    border-color: #B8B9BC;
+    color: $light-grey;
+    background: $lightest-grey;  
+    border-color: $light-grey;
 
     &::before {
-        background-color: #B8B9BC;
+        background-color: $light-grey;
     }
 }

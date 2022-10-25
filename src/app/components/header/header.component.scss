@@ -1,8 +1,10 @@
+@import '../../../shared/styles/colors/colors';
+
 .app-navigation {
     display: flex;
-    background: #2188D9;
+    background: $base-blue;
     padding: 0 32px;
-    color: #FFFFFF;
+    color: $base-white;
 
     &__logo {
         line-height: 72px;

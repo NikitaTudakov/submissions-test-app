@@ -4,7 +4,7 @@
     padding-left: 10px;
 
     &__list {
-        max-height: calc(100vh - var(--top-height));
+        height: calc(100vh - var(--top-height));
         overflow: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;

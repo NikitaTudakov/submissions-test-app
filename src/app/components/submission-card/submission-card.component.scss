@@ -1,7 +1,9 @@
-@import '../../../shared/mixins/status-value.scss';
+@import '../../../shared/styles/mixins/status-value';
+@import '../../../shared/styles/colors/colors';
+
 
 .submission-card {
-    border: 1px solid #B8B9BC;
+    border: 1px solid $light-grey;
     border-radius: 4px;
     padding: 16px;
     margin-right: 40px;
@@ -22,10 +24,6 @@
         &__status {
             max-height: 30px;
             @include status-value;
-
-            &::before {
-                vertical-align: middle;
-            }
     
             &-Low {
                 @include status-value-Low;
@@ -46,7 +44,7 @@
         font-size: 16px;
 
         &__title {
-            color: #B8B9BC;
+            color: $light-grey;
             margin-right: 8px;
         }
 
@@ -57,7 +55,7 @@
         &__value {
             &-expiried {
                 font-weight: 500;
-                color: #FF3D00;
+                color: $base-error;
             }
         }
     }

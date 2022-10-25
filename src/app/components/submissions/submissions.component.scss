@@ -1,3 +1,5 @@
+@import '../../../shared/styles/colors/colors';
+
 .submissions {
 
     &__container {
@@ -14,6 +16,10 @@
 
         &-icon {
             margin-right: 12px;
+        }
+
+        &-placeholder {
+            color: $light-grey;
         }
     }
 
@@ -40,7 +46,7 @@
     }
 
     &__icon {
-        color: gray !important;
+        color: $light-grey !important;
     }
 
     &__placeholder {
@@ -52,7 +58,7 @@
         align-items: center;
         margin-left: 17px;
         margin-right: 10px;
-        color: #2188D9;
+        color: $base-blue;
         font-weight: 500;
         font-size: 16px;
         background-color: transparent;
@@ -65,18 +71,18 @@
         &__icon {
             -webkit-mask: url(../../../assets/icons/download-icon.svg) no-repeat center;
             mask: url(../../../assets/icons/download-icon.svg) no-repeat center;
-            background-color: #2188D9;
+            background-color: $base-blue;
             width: 20px;
             height: 17px;
             transition:  0.3s ease-in-out; 
         }
 
         &:hover {
-            background-color: #2188D9;
-            color: #FFFFFF;
+            background-color: $base-blue;
+            color: $base-white;
 
             .submissions__export-btn__icon {
-                background-color: #FFFFFF;
+                background-color: $base-white;
             }
         }
 

@@ -1,4 +1,5 @@
-@import '../../../shared/mixins/status-value.scss';
+@import '../../../shared/styles/mixins/status-value';
+@import '../../../shared/styles/colors/colors';
 
 .submission-list {
     width: 100%;
@@ -14,7 +15,7 @@
 
         thead {
             th {
-                border-bottom: 1px solid #ECECED;
+                border-bottom: 1px solid $lightest-grey;
                 padding: 16px 10px;
                 text-align: start;
 
@@ -30,14 +31,14 @@
                 line-height: 47px;
 
                 &:hover {
-                    background: #F1F5F8;
+                    background: $light-blue;
                 }
             }
             td {
                 padding: 0 10px;
                 font-size: 16px;
                 font-weight: 400;
-                border-bottom: 1px solid #ECECED;
+                border-bottom: 1px solid $lightest-grey;
 
 
                 &:last-child {
@@ -51,7 +52,7 @@
 
             td.expiried {
                 font-weight: 500;
-                color: #FF3D00;
+                color: $base-error;
             }
         }
 
@@ -90,8 +91,8 @@
     width: 32px;
     height: 32px;
     font-size: 16px;
-    border: 1px solid #B8B9BC;
-    background-color: #FFFFFF;
+    border: 1px solid $light-grey;
+    background-color: $base-white;
     border-radius: 4px;
     cursor: pointer;
 
@@ -100,16 +101,16 @@
     }
 
     &-current {
-        color: #2188D9;
-        border-color: #2188D9;
+        color: $base-blue;
+        border-color: $base-blue;
     }
 
     &[disabled] {
-        background-color: #ECECED;
+        background-color: $lightest-grey;
     }
 
     &__arrow {
-        border: solid #B8B9BC;
+        border: solid $light-grey;
         border-width: 0 2px 2px 0;
         display: inline-block;
         padding: 5px;

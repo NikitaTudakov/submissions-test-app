@@ -1,10 +1,13 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { from, fromEvent, Observable, Subject } from 'rxjs';
+import { fromEvent, Observable, Subject } from 'rxjs';
 import { filter, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 import { SubmissionsService } from 'src/app/services/submissions.service';
 import { SubmissionStatusEnum } from 'src/shared/enums/submissionEnum';
 import { Submission } from 'src/shared/interfaces/submission.interface';
+
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
     selector: 'app-submissions',
@@ -14,8 +17,7 @@ import { Submission } from 'src/shared/interfaces/submission.interface';
 })
 export class SubmissionsComponent implements OnInit, AfterViewInit, OnDestroy {
 
-    @ViewChild('tabGroup', { static: false }) tabGroup: any;
-    @ViewChild('submissionsActions', { static: false }) submissionsActions: any;
+    @ViewChild('submissionsActions', { static: false }) submissionsActions: ElementRef;
     private additionalMargin: number = 0;
     public subscription: Subject<void> = new Subject();
     public submissions: Submission[] = [];
@@ -58,7 +60,7 @@ export class SubmissionsComponent implements OnInit, AfterViewInit, OnDestroy {
                     })
                 } else if(key === 'date' && formValues[key]) {
                     this.filteredSubmissions = this.filteredSubmissions.filter(submission => {
-                        let submissionDate = submission.date;
+                        const submissionDate = submission.date;
                         submissionDate.setHours(0,0,0,0);
                         return submissionDate.getTime() === formValues.date.getTime();
                     })
@@ -75,6 +77,10 @@ export class SubmissionsComponent implements OnInit, AfterViewInit, OnDestroy {
         this.additionalMargin = this.submissionsActions.nativeElement.offsetHeight - 67;
         const topHeight = (document.querySelector('.app-navigation')! as HTMLElement).offsetHeight + 169 + this.additionalMargin;
         document.documentElement.style.setProperty('--top-height', topHeight + 'px');
+
+        document.querySelector('.submissions__export-btn')?.addEventListener('click', () => {
+            this.savePDF();
+        })
 
         if(this.additionalMargin > 0) {
             contentEl.forEach(el => {
@@ -107,13 +113,38 @@ export class SubmissionsComponent implements OnInit, AfterViewInit, OnDestroy {
     public getSubmissions(): void {
         this.submissions = this.submissionService.getSubmissions();
     }
+
+    public savePDF() {
+        let pdf: any;
+        let printedElement: HTMLElement;
+        let pdfName: string;
+        if(document.querySelector('.submission-map__google-map')) {
+            printedElement = document.querySelector('.submission-map__google-map')!
+            pdfName = 'Submissions Map'
+        } else {
+            printedElement = document.querySelector('.submission-list')!
+            pdfName = 'Submissions Table'
+        }
+
+        html2canvas(printedElement,{
+            useCORS: true,
+            allowTaint: true,
+        })
+        .then(canvas => {
+            pdf = new jsPDF('l', 'pt', [canvas.width, canvas.height]);
+
+
+            const imgData  = canvas.toDataURL("image/jpeg", 1.0);
+            pdf.addImage(imgData,0,0,canvas.width, canvas.height);
+            pdf.save(pdfName + '.pdf');
+        });
+    }
     
     private addEmptyElementstoMatTab() {
         const placeholderDiv: HTMLElement = this.rendrer.createElement('div');
         const exportButton: HTMLElement = this.rendrer.createElement('button');
         const submissionsACtions: HTMLElement = document.querySelector('.submissions__actions')! as HTMLElement;
         const parentEl = document.querySelector('.mat-tab-label-container')!;
-
         this.rendrer.addClass(exportButton, 'submissions__export-btn');
         exportButton.innerHTML='<span class=submissions__export-btn__icon></span> <span>Export</span>';
         

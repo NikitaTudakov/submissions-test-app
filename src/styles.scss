@@ -1,3 +1,5 @@
+@import './shared/styles/colors/colors';
+
 *,
 *::before,
 *::after {
@@ -54,12 +56,12 @@ a {
 }
 
 .mat-tab-label {
-    border: 2px solid #B8B9BC;
+    border: 2px solid $light-grey;
     border-radius: 4px;
     min-width: 25px !important;
     padding: 5px;
     background-color: transparent;
-    color: black;
+    color: $base-black;
     font-weight: 700;
 }
 
@@ -77,8 +79,8 @@ a {
 
 .mat-tab-label.mat-tab-label-active {
     min-width: 25px !important;
-    background-color: #2188D9;
-    border-color: #2188D9;
+    background-color: $base-blue;
+    border-color: $base-blue;
     color: white;
     font-weight: 700;
 }
@@ -99,7 +101,7 @@ a {
 .mat-form-field-flex {
     padding-left: 16px;
     padding-right: 16px;
-    border: 1px solid #B8B9BC;
+    border: 1px solid $light-grey;
     border-radius: 4px;
 }
 
@@ -134,5 +136,5 @@ a {
 }
 
 .submission-list__table__checkbox .mat-checkbox-frame {
-    border-color: #B8B9BC
+    border-color: $light-grey
 }

@@ -6,6 +6,17 @@
         </app-submission-card>
     </div>
     <div class="submission-map__google-map">
-        Map Will Be Here
+        <google-map
+            height="100%"
+            width="100%"
+            [center]="center"
+            [options]="options">
+
+            <map-marker
+                *ngFor="let submission of submissions, let i = index"
+                [position]="submission.position"
+                [title]="submission.task"
+            ></map-marker>
+        </google-map>
     </div>
 </div>

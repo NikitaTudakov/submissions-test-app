@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { SubmissionsComponent } from './components/submissions/submissions.component';
-import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { SubmissionListComponent } from './components/submission-list/submission-list.component';
 import { NotImpementedComponent } from './components/not-impemented/not-impemented.component';
 import { SubmissionMapComponent } from './components/submission-map/submission-map.component';
+import { SubmissionCardComponent } from './components/submission-card/submission-card.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -20,7 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { SubmissionCardComponent } from './components/submission-card/submission-card.component';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 @NgModule({
     declarations: [
@@ -28,7 +28,6 @@ import { SubmissionCardComponent } from './components/submission-card/submission
         HeaderComponent,
         MainComponent,
         SubmissionsComponent,
-        GoogleMapComponent,
         SubmissionListComponent,
         NotImpementedComponent,
         SubmissionMapComponent,
@@ -45,7 +44,8 @@ import { SubmissionCardComponent } from './components/submission-card/submission
         MatDatepickerModule,
         MatNativeDateModule,
         ReactiveFormsModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        GoogleMapsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -42,8 +42,6 @@ export class SubmissionListComponent implements OnInit, OnChanges {
         }
     }
 
-    constructor() { }
-
     ngOnInit(): void {
         this.slicedSubmissions = this.submissions.slice(0,10)
     }

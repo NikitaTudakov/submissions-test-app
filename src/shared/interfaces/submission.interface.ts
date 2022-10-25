@@ -12,4 +12,8 @@ export interface SubmissionForm {
 export interface Submission extends SubmissionForm {
     to: string,
     address: string,
+    position: {
+        lat: number,
+        lng: number
+    }
 }
